@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+      <!-- SPELLS -->
+      <!-- load angular and angular route via CDN -->
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+      <script src="map.js"></script>
+      <script src="/js/angular-route.js"></script>
+      <script src="js/angular.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWLtmKgejWFFc_DWvNJ5OziMFJqnDh3K4&libraries=places"></script>
+    
+    
+    <style>
+     #map { 
+    height: 400px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+    </style>
+  </head>
+  <body ng-controller="mainController">
+    <!-- HEADER AND NAVBAR -->
+        <header>
+            <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">Place Searcher</a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fa fa-shield"></i> About</a></li>
+                    <li><a href="contact.html"><i class="fa fa-comment"></i> Contact</a></li>
+                    <li><a href="favorites.html"><i class="fa fa-favorite"></i>Favourites</a></li>
+                </ul>
+            </div>
+            </nav>
+        </header>
+
+        <!-- MAIN CONTENT AND INJECTED VIEWS -->
+        <div ng-app="myApp" ng-controller="newPlaceCtrl">
+    
+    
+    <div role="alert" ng-show="apiError">
+        <b>API Error : </b>
+        <span>{{ apiStatus }}</span>
+    </div>
+    
+    <form name="searchForm" novalidate 
+    ng-submit="search()">
+        <div>
+            <input name="place" type="text"
+            ng-model="searchPlace" required autofocus />
+            <span>
+                <button ng-disabled="searchForm.$invalid">Search</button>
+            </span>
+        </div>
+    </form>
+        
+    <div id="map"></div>
+      
+    <form name="resForm" novalidate 
+    ng-submit="send()">
+        
+        <p> Information that has given: </p> <br/>
+        
+            <label for="resName">Name</label> <br/>
+           
+                <input name="resName" type="text"
+                ng-model="place.name" required /> <br/>
+            
+            <label for="resAddress">Address</label> <br/>
+           
+                <input name="resAddress" type="text" 
+                ng-model="place.formatted_address" required /> <br/>
+           
+           
+            
+        <br/> <br/>
+        
+        <button ng-click="" >Add To Favourites</button>
+           
+    </form>
+    
+</div>
+  </body>
+</html>

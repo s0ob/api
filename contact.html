@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+      <!-- SPELLS -->
+      <!-- load angular and angular route via CDN -->
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+<body ng-controller="mainController">
+    <!-- HEADER AND NAVBAR -->
+        <header>
+            <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">Place Searcher</a>
+                </div>
+               <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fa fa-shield"></i> About</a></li>
+                    <li><a href="contact.html"><i class="fa fa-comment"></i> Contact</a></li>
+                    <li><a href="favorites.html"><i class="fa fa-favorite"></i>Favourites</a></li>
+                </ul>
+            </div>
+            </nav>
+        </header>
+<h1>Contact Page</h1>
+<p>{{ message }}</p>
+<table>
+  <tr ng-repeat="book in books">
+    <td>{{book}}</td><td>{{book.volumeInfo.title}}</td><td><a  ng-click="delete(book)" href="">remove</a></td>
+  </tr>
+</table>
+
+  
+</html>
