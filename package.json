@@ -15,7 +15,12 @@
     "jsonwebtoken": "^7.4.1",
     "moment": "^2.18.1",
     "password-hash": "^1.2.2"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"
