@@ -16,7 +16,6 @@ server.pre(serveStatic('public/',{'index': ['index.html']}));
 server.use(restify.plugins.bodyParser());
 
 Models.sequelize.sync().then(() => {
-    server.listen(8080, function (){
-       console.log('Start server on port 8080') 
+    server.listen(process.env.PORT || 5000 (){
     });
 });
